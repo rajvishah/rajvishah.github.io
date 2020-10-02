@@ -82,8 +82,9 @@ function showInfo(data) {
 		if (data[i].Lab) {
 			LabSuffix = " (" + data[i].Lab + ")"
 		}
+		ProfUrl="<a href=" + data[i].Webpage + ">" + data[i].Professor + "</a>"
 		tr += "<td>"+data[i].University+ LabSuffix</td>";
-		tr += "<td>"+data[i].Professor+"</td>";
+		tr += "<td>"+ProfURL"</td>";
 		tr += "<td>"+data[i].Research+"</td>";
 		tr += "</tr>";
 		t += tr;
