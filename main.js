@@ -1,20 +1,16 @@
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1lbKcaKlHUKlWf-9-YjSuULKIy5cvZwJGYj97Ab4YpHo/edit?usp=sharing';
+$.getJSON("https://spreadsheets.google.com/feeds/list/1t2_HHLkibAybPORmXuDDEFEyetC3p7r1blQRpjzinXg/od6/public/values?alt=json", function (data) {
 
-function init() {
-	Papa.parse(publicSpreadsheetUrl, {
-		download: true,
-		header: true,
-		complete: showInfo
-	})
-}
-	
-function showInfo(results) {
-	var data = results.data
-	alert('Successfully processed ' + data.length + ' rows!')
+	var sheetData = data.feed.entry;
 
-	data.forEach(function(data) {
-body.innerHTML = data.body;
-body2.innerHTML = data.body2;
+	var i;
+	for (i = 0; i < sheetData.length; i++) {
+
+		var name = data.feed.entry[i]['gsx$_cn6ca']['$t'];
+		var age = data.feed.entry[i]['gsx$_cokwr']['$t'];
+		var email = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+
+		document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+name+'</td>'+'<td>'+age+'</td>'+'<td>'+email+'</td>'+'</tr>');
+
+	}
 });
-}
-window.addEventListener('DOMContentLoaded', init)
+
