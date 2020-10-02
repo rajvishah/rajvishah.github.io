@@ -13,4 +13,3 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1t2_HHLkibAybPORmXuDDEFEye
 
 	}
 });
-
