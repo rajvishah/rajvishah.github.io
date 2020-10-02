@@ -78,7 +78,11 @@ function showInfo(data) {
 	var t = "";
 	for (var i = 0; i < data.length; i++){
 		var tr = "<tr>";
-		tr += "<td>"+data[i].University+"</td>";
+		LabSuffix = "";
+		if (data[i].Lab) {
+			LabSuffix = " (" + data[i].Lab + ")"
+		}
+		tr += "<td>"+data[i].University+ LabSuffix</td>";
 		tr += "<td>"+data[i].Professor+"</td>";
 		tr += "<td>"+data[i].Research+"</td>";
 		tr += "</tr>";
