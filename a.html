@@ -40,50 +40,51 @@
 }
 </style>
 
+
 <body>
 
-<table id='entries'>
-<thead>
-<tr>
-<th>Name</th>
-<th>Category</th>
-<th>Healthiness</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+	        <table class="styled-table" id='entries'>
+			                <thead>
+						                <tr>
+									                        <th>Name</th>
+												                        <th>Category</th>
+															                        <th>Healthiness</th>
+																		                </tr>
+																				                </thead>
+																						                <tbody>
+																									                </tbody>
+																											        </table>
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-<script type="text/javascript">
-	var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE&output=html';
+																												                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+																														                <script type="text/javascript">
+																																	                        var public_spreadsheet_url = "https://docs.google.com/spreadsheets/d/1lbKcaKlHUKlWf-9-YjSuULKIy5cvZwJGYj97Ab4YpHo/edit?usp=sharing";
 
 function init() {
-	Tabletop.init( { key: public_spreadsheet_url,
-		callback: showInfo,
-		simpleSheet: true } );
+	        Tabletop.init( { key: public_spreadsheet_url,
+			                callback: showInfo,
+			                simpleSheet: true } );
 }
 
 window.addEventListener('DOMContentLoaded', init)
 
 function showInfo(data) {
-	// data comes through as a simple array since simpleSheet is turned on
-	alert("Successfully processed " + data.length + " rows!")
-	var t = "";
-	for (var i = 0; i < data.length; i++){
-		var tr = "<tr>";
-		tr += "<td>"+data[i].Name+"</td>";
-		tr += "<td>"+data[i].Category+"</td>";
-		tr += "<td>"+data[i].Healthiness+"</td>";
-		tr += "</tr>";
-		t += tr;
-	}
-	document.getElementById("entries").innerHTML += t;
+	        // data comes through as a simple array since simpleSheet is turned on
+	        alert("Successfully processed " + data.length + " rows!")
+	        var t = "";
+	        for (var i = 0; i < data.length; i++){
+			                var tr = "<tr>";
+			                tr += "<td>"+data[i].Name+"</td>";
+			                tr += "<td>"+data[i].Category+"</td>";
+			                tr += "<td>"+data[i].Healthiness+"</td>";
+			                tr += "</tr>";
+			                t += tr;
+			        }
+	        document.getElementById("entries").innerHTML += t;
 }
 
-document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
-</script>
+document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
+                </script>
 </body>
 </html>
 
