@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<style>
+	<style>
 .content {
 	max-width: 500px;
 	margin: auto;
@@ -42,55 +42,54 @@
 	font-weight: bold;
 	color: #009879;
 }
-</style>
+	</style>
 
 
 
-<body>
-	<div class="content">
+	<body>
+		<div class="content">
 
-	        <table class="styled-table" id='entries'>
-			                <thead>
-						                <tr>
-									                        <th>Name</th>
-												                        <th>Category</th>
-															                        <th>Healthiness</th>
-																		                </tr>
-																				                </thead>
-																						                <tbody>
-																									                </tbody>
-																											        </table>
+			<table class="styled-table" id='entries'>
+				<thead>
+					<tr>
+						<th>University (Lab)</th>
+						<th>Professor</th>
+						<th>Research Areas</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
 
 
-																												                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-																														                <script type="text/javascript">
-																																	                        var public_spreadsheet_url = "https://docs.google.com/spreadsheets/d/1lbKcaKlHUKlWf-9-YjSuULKIy5cvZwJGYj97Ab4YpHo/edit?usp=sharing";
-
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+			<script type="text/javascript">
+				var public_spreadsheet_url = "https://docs.google.com/spreadsheets/d/1VUDFuzxGg_qUWRiXaRSlDdAUpr8LO4ohtXZgQL3wF5I/edit?usp=sharing";
 function init() {
-	        Tabletop.init( { key: public_spreadsheet_url,
-			                callback: showInfo,
-			                simpleSheet: true } );
+	Tabletop.init( { key: public_spreadsheet_url,
+		callback: showInfo,
+		simpleSheet: true } );
 }
 
 window.addEventListener('DOMContentLoaded', init)
 
 function showInfo(data) {
-	        // data comes through as a simple array since simpleSheet is turned on
-	        var t = "";
-	        for (var i = 0; i < data.length; i++){
-			                var tr = "<tr>";
-			                tr += "<td>"+data[i].Name+"</td>";
-			                tr += "<td>"+data[i].Category+"</td>";
-			                tr += "<td>"+data[i].Healthiness+"</td>";
-			                tr += "</tr>";
-			                t += tr;
-			        }
-	        document.getElementById("entries").innerHTML += t;
+	// data comes through as a simple array since simpleSheet is turned on
+	var t = "";
+	for (var i = 0; i < data.length; i++){
+		var tr = "<tr>";
+		tr += "<td>"+data[i].University+"</td>";
+		tr += "<td>"+data[i].Professor+"</td>";
+		tr += "<td>"+data[i].Research+"</td>";
+		tr += "</tr>";
+		t += tr;
+	}
+	document.getElementById("entries").innerHTML += t;
 }
 
 document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");
-                </script>
-</div>
-</body>
+			</script>
+		</div>
+	</body>
 </html>
 
