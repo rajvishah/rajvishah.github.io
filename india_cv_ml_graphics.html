@@ -1,1 +1,37 @@
-Hello World
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>    
+	var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1lbKcaKlHUKlWf-9-YjSuULKIy5cvZwJGYj97Ab4YpHo/edit?usp=sharing';
+
+function init() {
+	Tabletop.init( {
+		key: publicSpreadsheetUrl,
+		callback: showInfo,
+		simpleSheet: true 
+	} )
+}
+
+function showInfo(data, tabletop) {
+	alert('Successfully processed!')
+	console.log(data);
+}
+
+window.addEventListener('DOMContentLoaded', init)
+</script>
+
+function showInfo(data, tabletop) {
+data.forEach(function(data) {
+body.innerHTML = data.body;
+body2.innerHTML = data.body2;
+});
+}
+window.addEventListener('DOMContentLoaded', init)
+
+<!-- Start Section One: Keep track of your snippets -->
+<section class="feature">
+				<div class="intro-text">
+								<h3 id="body"></h3>
+								<p id="body2">
+
+								</p>
+				</div>
+</section>
